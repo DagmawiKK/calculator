@@ -72,7 +72,7 @@ buttons.forEach((button) => button.addEventListener("click", () => {
                         input.textContent = (operate(input.textContent));
                         count2++;
                     }
-                    if ((input.textContent.length > 0)&&(input.textContent.includes("+") || input.textContent.includes("/") || input.textContent.includes("*") && button.textContent === "-")) {
+                    if ((input.textContent.length > 0)&&(input.textContent.includes("-") && input.textContent.includes("+") || input.textContent.includes("/") || input.textContent.includes("*") && button.textContent === "-")) {
                         if (count2 <= 0) {
                             input.textContent += " " + button.textContent;
                         }
