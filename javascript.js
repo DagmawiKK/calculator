@@ -47,7 +47,6 @@ const divide = function (...args) {
 const buttons = document.querySelectorAll("button");
 const input = document.querySelector(".expression");
 buttons.forEach((button) => button.addEventListener("click", () => {
-    let previous = 0;
     let count = 0;
     let count2 = 0;
 
