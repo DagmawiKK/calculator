@@ -24,9 +24,6 @@ const operate = function(string) {
         case "*":
             return multiply(args[0], args[2]);
         case "/":
-            if (args[2] === 0) {
-                return ("Division by zero error");
-            }
             return divide(args[0], args[2]);              
     }
 }
