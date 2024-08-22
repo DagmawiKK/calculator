@@ -1,12 +1,8 @@
 const operate = function(string) {
-    console.log(string)
-
     const args = string.split("").filter(char => char != " " && char != "");
-    console.log(args)
 
     args[0] = parseFloat(args[0]);
     args[2] = parseFloat(args[2]);
-    console.log(args)
     switch(args[1]) {
         case "+":
             return add(args[0], args[2]);
@@ -31,4 +27,4 @@ const multiply = function (...args) {
 const divide = function (...args) {
     return args[0] / args[1];
 }
-console.log(operate("1+2"))
+console.log(operate("1 + 2 "))
