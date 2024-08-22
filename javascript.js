@@ -64,7 +64,13 @@ buttons.forEach((button) => button.addEventListener("click", () => {
                     input.textContent +=  button.textContent; 
                 }
                 else {
-                    input.textContent += " " + button.textContent +" ";
+                    if ((input.textContent.length > 0)&&(input.textContent.includes("+") || input.textContent.includes("/") || input.textContent.includes("*") && button.textContent === "-")) {
+                        input.textContent += " " + button.textContent;
+                    }
+                    else {
+
+                        input.textContent += " " + button.textContent +" ";
+                    }
                 }
             }
         }
