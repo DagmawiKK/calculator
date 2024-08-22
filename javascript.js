@@ -78,7 +78,6 @@ buttons.forEach((button) => button.addEventListener("click", () => {
                         }
                         else {
                             input.textContent +=  button.textContent;
-
                         }
                     }
                     else {
@@ -91,6 +90,7 @@ buttons.forEach((button) => button.addEventListener("click", () => {
         if (button.textContent === "clear") {
             input.textContent = "";
             count = 0;
+            count2 = 0;
         }
         if (button.textContent === "=") {
             if (count === 0) {
