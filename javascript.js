@@ -24,6 +24,9 @@ const operate = function(string) {
         case "*":
             return multiply(args[0], args[2]);
         case "/":
+            if (args[0] === args[2] === 0) {
+                return ("Division by zero error");
+            }
             return divide(args[0], args[2]);              
     }
 }
@@ -46,6 +49,7 @@ const input = document.querySelector(".expression");
 buttons.forEach((button) => button.addEventListener("click", () => {
     let previous = 0;
     let count = 0;
+    let count2 = 0;
 
     if(button.classList.contains("backspace")) {
         if(input.textContent.length > 0) {
@@ -64,8 +68,18 @@ buttons.forEach((button) => button.addEventListener("click", () => {
                     input.textContent +=  button.textContent; 
                 }
                 else {
+                    if (input.textContent.split(" ").length === 3) {
+                        input.textContent = (operate(input.textContent));
+                        count2++;
+                    }
                     if ((input.textContent.length > 0)&&(input.textContent.includes("+") || input.textContent.includes("/") || input.textContent.includes("*") && button.textContent === "-")) {
-                        input.textContent += " " + button.textContent;
+                        if (count2 <= 0) {
+                            input.textContent += " " + button.textContent;
+                        }
+                        else {
+                            input.textContent +=  button.textContent;
+
+                        }
                     }
                     else {
 
